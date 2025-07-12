@@ -188,11 +188,14 @@ def install_modules(modules):
     for module in modules:
         try:
             __import__(module)
+            print(f"{module} is already installed")
         except ImportError:
             subprocess.check_call([sys.executable, "-m", "pip", "install", module])
 
 
 if __name__ == "__main__":
+    modules = ["tkintertable","numpy"]
+    install_modules(modules)
     root = tk.Tk()
     app = Rotating3DShapes(root)
     root.mainloop()
