@@ -141,15 +141,15 @@ class HelpWindow:
         top.resizable(False, False)
         top.configure(bg="#222")
 
-        # Frame for padding
+       
         container = tk.Frame(top, bg="#222")
         container.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
 
-        # Scrollbar
+       
         scrollbar = tk.Scrollbar(container)
         scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
 
-        # Text widget for help message
+        
         text_widget = tk.Text(
             container,
             wrap=tk.WORD,
@@ -162,10 +162,10 @@ class HelpWindow:
         )
         text_widget.pack(fill=tk.BOTH, expand=True)
 
-        # Connect scrollbar
+    
         scrollbar.config(command=text_widget.yview)
 
-        # Help content
+
         help_message = (
             " Welcome to the Rotating 3D Shapes Visualizer!\n\n"
             " Features:\n"
@@ -177,12 +177,11 @@ class HelpWindow:
             "• Each frame rotates the shape in 3D space using rotation matrices.\n"
             "• 3D coordinates are projected onto a 2D canvas using perspective projection.\n\n"
             " Great for visual learners, geometry fans, or just fun spinning shapes!\n\n"
-            " Built with love using Python, Tkinter, and NumPy.\n\n"
             " Tip: Try enabling only Z rotation on the Donut to get a cool hypnotic effect!"
         )
 
         text_widget.insert(tk.END, help_message)
-        text_widget.config(state=tk.DISABLED)  # Make it read-only
+        text_widget.config(state=tk.DISABLED) 
 
 def install_modules(modules):
     for module in modules:
